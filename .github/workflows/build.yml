@@ -1,4 +1,3 @@
-# .github/workflows/build.yml
 name: Build Mod Jar
 
 on:
@@ -15,12 +14,12 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'  # 1.16.5 Forge에 맞춰 설정
+          java-version: '17'
 
-      - name: Run Gradle build
+      - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Upload artifact
+      - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: pixelmon-random-evolution-mod
